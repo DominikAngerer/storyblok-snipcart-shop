@@ -19,6 +19,7 @@
     <div class="grid">
       
     {% for product in productitems.data limit: 3 %}
+     {{product.content._editable}}
       <div class="col-1-2">
         <a href="/{{product.full_slug}}" class="product_card">
           <img class="product_card__image" src="{{product.content.image | resize: '380x0'  }}" alt="{{ product.content.name | default: product.name }}">
@@ -43,6 +44,7 @@
     <div class="grid">
       
     {% for post in postitems.data %}
+      {{post.content._editable}}
       <div class="col-1-2">
         <a href="/{{post.full_slug}}" class="post_card">
           <img class="post_card__image" src="{{post.content.image | resize: '380x0'}}" alt="{{ post.content.title | default: post.name }}">
