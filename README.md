@@ -6,16 +6,56 @@
 
 ## Try it out!
 
-```
-# 1. Install the Storyblok CLI
-$ npm install storyblok -g
+### 1. Clone the Storyblok Space
 
-# 2. Go through the quickstart
-$ storyblok quickstart
+Press the URL below to directly build this shop
+in your own Storyblok space library.
 
-# 3. Fire up your dev environment
-$ cd ./project && npm i && npm run dev
+[Press here for your own shop](https://app.storyblok.com/#!/build/41450)
+
+<small>Make sure you're already registered, if not register and press the link again.</small>
+
+### 2. Update the Snipcart API key & Configuration
+
+You can update the Snipcart API-key in Storyblok by clicking on the
+Header and change the Value of the Key "Snipcart API Key".
+
+Make sure you've also setup your Snipcart account following their awesome tutorial.
+
+### 3. Your Shop and Blog is already online!
+
+You can now create new Products and also Blog posts. Hurrrray!
+
+### Bonus
+
+#### 1. You want to change the HTML, CSS and JavaScript? Lets start
+
+This repository uses the [Rendering Service](https://www.storyblok.com/docs/Rendering-Service/Introduction) of Storyblok to provide you a quick and easy to use starting point for Snipcart in combination with Storyblok.
+
 ```
+## Install the CLI
+npm install -g storyblok
+
+## setup configuration
+storyblok select
+
+## the CLI will ask you questions - answer them like:
+
+# How should your Project be named - **Your Project Name**
+# Select the type of your project - **Theme (Storyrenderer/Hosted)**
+# We got some Themes prepared for you: - **Custom Theme [We will ask you about your Github URL]**
+# What is your github theme URL? - **https://github.com/dominikangerer/storyblok-snipcart-shop**
+# What is your space ID? - **YOUR_SPACE_ID** (Can be found on the Space dashboard)
+# What is your domain? - **YOUR_STORYBLOK_SUBDOMAIN** (Can be found in your Space settings "Location")
+# What is your theme token? - **YOUR_THEME_TOKEN** (Can be found on the Space dashboard)
+
+## Navigate to your checkout project and instead of `gulp` run `npm run dev`.
+npm run dev
+
+```
+
+The rendering service automatically pushes your new changes to Storyblok using a gulp task in the background. You can have a look at the [Kickstart of Storyblok](https://github.com/storyblok/quickstart) or at the `gulpfile.babel.js` in this repository so you know what will happen next.
+
 
 ## Commands
 
@@ -32,33 +72,6 @@ $ npm run deploy:dev
 
 # Sync your current state on the live environment
 $ npm run deploy:live
-```
-
-## Frequently Ask Questions
-
-#### How can I load stories to create an overview for (news|articles|projects|...): 
-
-You can simply use following snippet to load all the stories from a specific folder according to the folder's slug like:
-
-```
-{% set newsitems from stories starts_with:'news', per_page: 3 %}
-{% for news in newsitems.data %}
-    {{ news.name }}
-{% endfor %}
-```
-
-#### I used the Weblink/Storylink field type - How can I get the link in the template?
-You will receive the actual path by using the `url` filter:
-
-```
-{{ blok.your_field_key | url }} <!-- Outputs a link, giving a link object -->
-```
-
-#### I uploaded a static file in the views/assets folder how can I reference that?
-We've prepared the `asset_url` filter for that:
-
-```
-{{ 'assets/js/scripts.js' | asset_url }} <!-- Outputs the theme url -->
 ```
 
 #### Is there a full documentation about those filters and other possibilities?
