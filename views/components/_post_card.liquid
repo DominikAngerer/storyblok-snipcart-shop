@@ -1,0 +1,4 @@
+<a href="/{{post.full_slug}}" class="post_card">
+  <img class="post_card__image" src="{{post.content.image}}" alt="{{ post.content.title | default: post.name }}">
+  <h3 class="post_card__title">{{ post.content.title | default: post.name }}</h3>
+</a>

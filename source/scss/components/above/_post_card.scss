@@ -1,0 +1,13 @@
+.post_card {
+  display: block;
+  text-decoration: none;
+}
+
+.post_card__image {
+  max-width: 100%;
+}
+
+.post_card__title {
+  margin-top: 15px;
+  @extend .h6;
+}
