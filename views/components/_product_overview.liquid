@@ -1,0 +1,25 @@
+<div class="product_overview">
+  
+  <section class="home__products">
+
+  <h2 class="home__headline">Products</h2>
+
+  {% set productitems from stories starts_with: 'products/', is_startpage: false %}
+
+  <div class="grid">
+    
+  {% for product in productitems.data %}
+    <div class="col-1-3">
+      <a href="/{{product.full_slug}}" class="product_card">
+        <img class="product_card__image" src="{{product.content.image | resize: '316x0' }}" alt="{{ product.content.name | default: product.name }}">
+        <h3 class="product_card__title">{{ product.content.name | default: product.name }}</h3>
+        <p class="product_card__sub_title">{{ product.content.description }}</p>
+      </a>
+    </div>
+  {% endfor %}
+
+  </div>
+
+</section>
+
+</div>
