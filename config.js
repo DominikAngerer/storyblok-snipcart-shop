@@ -7,8 +7,8 @@ const reload = browserSync.reload
 module.exports = {
   blok: {
     apiVersion: 2,
-    themeId: '41450',
-    domain: '52e29fea.me.storyblok.com',
+    themeId: 'INSERT_SPACE_ID',
+    domain: 'INSERT_YOUR_DOMAIN',
     apiKey: require('./token'),
     basePath: 'views',
     environment: 'live',
