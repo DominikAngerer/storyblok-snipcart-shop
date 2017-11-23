@@ -18,6 +18,11 @@
     <style>{%- include 'above_fold_css' -%}</style>
   {% endif %}
 
+  <!-- Snipcart Integration -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="https://cdn.snipcart.com/scripts/2.0/snipcart.js" data-api-key="{{global.content.snipcart_api_key}}" id="snipcart"></script>
+  <link href="https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css" rel="stylesheet" type="text/css" />
+
   <link rel="preload" id="stylesheet" href="{{ 'assets/css/below.css' | asset_url }}" as="style" onload="this.rel='stylesheet'">
 </head>
 <body>
