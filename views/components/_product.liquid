@@ -1,0 +1,56 @@
+{{blok._editable}}
+<article class="product">
+
+  {% assign fullSlug = story.full_slug | split: '/' %}
+  {% assign folder_slug = '' %}
+  {% for fs in fullSlug %}
+    {% if forloop.last != true %}
+      {% assign folder_slug = folder_slug | append: fs | append: '/' %}
+    {% endif %}
+  {% endfor %}
+  
+  <div class="product__back_container">
+    <a class="product__back" href="/{{folder_slug}}">Back to overview</a>
+  </div>
+
+  <h1 class="product__title">{{ blok.name | default: story.name }}</h1>
+
+  <img class="product__image" src="{{blok.image | resize: '770x0'}}" alt="{{blok.name | default: story.name}}">
+
+  <time class="product__time" datetime="{{ story.created_at | default: story.published_at }}">{{story.created_at | default: story.published_at | date: "%B %d, %Y" }}</time>
+
+  <button
+    class="snipcart-add-item"
+    data-item-id="2"
+    data-item-name="{{ blok.name | default: story.name }}"
+    data-item-price="{{blok.price}}"
+    data-item-url="{{canonical}}"
+    data-item-description="Some fresh bacon">
+        Buy bacon
+  </button>
+
+  <div class="product__content">
+    {% for item in blok.content %}
+      {% include item.component with blok: item %}
+    {% endfor %}
+  </div>
+
+</article>
+
+<section class="random_products">
+
+  {% set productitems from stories starts_with: 'products', per_page: 3 %}
+
+  <div class="grid">
+    
+  {% for product in productitems.data %}
+    <div class="col">
+      <a href="/{{product.full_slug}}" class="product_card">
+        <img class="product_card__image" src="{{product.content.image}}" alt="{{ product.content.title | default: product.name }}">
+        <h3 class="product_card__title">{{ product.content.title | default: product.name }}</h3>
+      </a>
+    </div>
+  {% endfor %}
+
+  </div>
+</section>
