@@ -42,13 +42,13 @@ storyblok select
 
 #### 2. The CLI will ask you questions - answer them like:
 
-How should your Project be named - **Your Project Name**
-Select the type of your project - **Theme (Storyrenderer/Hosted)**
-We got some Themes prepared for you: - **Custom Theme [We will ask you about your Github URL]**
-What is your github theme URL? - **https://github.com/dominikangerer/storyblok-snipcart-shop**
-What is your space ID? - **YOUR_SPACE_ID** (Can be found on the Space dashboard)
-What is your domain? - **YOUR_STORYBLOK_SUBDOMAIN** (Can be found in your Space settings "Location")
-What is your theme token? - **YOUR_THEME_TOKEN** (Can be found on the Space dashboard)
+How should your Project be named - **Your Project Name**     
+Select the type of your project - **Theme (Storyrenderer/Hosted)**     
+We got some Themes prepared for you: - **Custom Theme [We will ask you about your Github URL]**     
+What is your github theme URL? - **https://github.com/dominikangerer/storyblok-snipcart-shop**     
+What is your space ID? - **YOUR_SPACE_ID** (Can be found on the Space dashboard)     
+What is your domain? - **YOUR_STORYBLOK_SUBDOMAIN** (Can be found in your Space settings "Location")     
+What is your theme token? - **YOUR_THEME_TOKEN** (Can be found on the Space dashboard)     
 
 ```
 ## Navigate to your checkout project and instead of `gulp` run `npm run dev`.
